@@ -1,0 +1,59 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 30,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["tray", "bluetooth", "network", "battery", "clock"],
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true,
+        "disable-markup": false,
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "clock": {
+      "format": "{:%a %d %b %I:%M %p}",
+      "tooltip": false,
+      "timezone": "Australia/West"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-alt": "{time} {icon}",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "format-charging": "{capacity}% 󰂄",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "network": {
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": ["", "" ," "],
+            "ethernet": [" "],
+            "disconnected": [""]
+        },
+        "on-click": "foot -e nmtui",
+    "tooltip": false
+    },
+    "bluetooth": {
+      "format": "󰂯",
+      "format-disabled": "󰂲",
+      "format-connected": "",
+      "on-click": "foot -e blueberry"
+    },
+    "tray": {
+        "icon-size": 18
+    }
+}
